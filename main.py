@@ -3,18 +3,19 @@ import numpy as np
 import time
 from aStar import astar
 
-maze = [[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 1, 1, 1, 0, 1],
-        [0, 0, 0, 0, 1, 1, 0, 0, 1, 0],
-        [0, 0, 0, 0, 1, 1, 0, 1, 1, 0],
-        [0, 0, 0, 0, 0, 0, 0, 1, 1, 0],
-        [0, 0, 0, 0, 0, 1, 1, 1, 1, 0],
-        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0]]
-start = (0,9)
-end = (9,0)
+maze = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]]
+
+start = (5, 0)
+end = (5,9)
 resolution = (1000, 1000)
 white = [255,255,255]
 black = [0,0,0]
@@ -37,7 +38,8 @@ while(True):
     for x in range(thing):
         background.fill(white)
 
-        player = pygame.draw.rect(background, black, ((pygamePath[i][0], pygamePath[i][1]),(10,10)))
+        player = pygame.draw.rect(background, black, ((pygamePath[i][1], pygamePath[i][0]),(10,10)))
+        obstacle = pygame.draw.rect(background,black,(400,200,30,500))
 
         i += 1
         screen.blit(background,(0,0))
